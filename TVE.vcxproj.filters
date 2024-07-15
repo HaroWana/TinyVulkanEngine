@@ -33,6 +33,9 @@
     <ClCompile Include="VE_Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VE_Swap_Chain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first_app.hpp">
@@ -47,13 +50,13 @@
     <ClInclude Include="VE_Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VE_Swap_Chain.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="compile.sh">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="compile.bat">
-      <Filter>Source Files</Filter>
     </None>
     <None Include="shaders\simple_shader.vert">
       <Filter>Source Files\shaders</Filter>
@@ -66,6 +69,9 @@
     </None>
     <None Include="shaders\simple_shader.vert.spv">
       <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="compile.bat">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>

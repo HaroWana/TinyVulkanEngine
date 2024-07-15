@@ -8,18 +8,31 @@
 #include <vector>
 
 namespace ve {
-    struct  PipelineConfigInfo {};
+    struct  PipelineConfigInfo {
+        VkViewport                              viewport;
+        VkRect2D                                scissor;
+        VkPipelineViewportStateCreateInfo       viewportInfo;
+        VkPipelineInputAssemblyStateCreateInfo  inputAssemblyInfo;
+        VkPipelineRasterizationStateCreateInfo  rasterizationInfo;
+        VkPipelineMultisampleStateCreateInfo    multisampleInfo;
+        VkPipelineColorBlendAttachmentState     colorBlendAttachment;
+        VkPipelineColorBlendStateCreateInfo     colorBlendInfo;
+        VkPipelineDepthStencilStateCreateInfo   depthStencilInfo;
+        VkPipelineLayout                        pipelineLayout = nullptr;
+        VkRenderPass                            renderPass = nullptr;
+        uint32_t                                subpass = 0;
+    };
 
     class   VEPipeline
     {
     public:
         VEPipeline(
-                VEDevice &device,
-                const std::string &vertFilepath,
-                const std::string &fragFilepath,
-                const PipelineConfigInfo &configInfo);
+                VEDevice                    &device,
+                const std::string           &vertFilepath,
+                const std::string           &fragFilepath,
+                const PipelineConfigInfo    &configInfo);
 
-        ~VEPipeline() {};
+        ~VEPipeline();
 
         VEPipeline(const VEPipeline &) = delete;
         void operator=(const VEPipeline &) = delete;
@@ -34,10 +47,10 @@ namespace ve {
 
         void    createShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule);
 
-        VEDevice    &veDevice;
-        VkPipeline  graphicsPipeline;
-        VkShaderModule vertShaderModule;
-        VkShaderModule fragShaderModule;
+        VEDevice        &veDevice;
+        VkPipeline      graphicsPipeline;
+        VkShaderModule  vertShaderModule;
+        VkShaderModule  fragShaderModule;
     };
 }
 

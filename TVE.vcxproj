@@ -23,12 +23,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VE_Device.cpp" />
     <ClCompile Include="VE_Pipeline.cpp" />
+    <ClCompile Include="VE_Swap_Chain.cpp" />
     <ClCompile Include="VE_Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first_app.hpp" />
     <ClInclude Include="VE_Device.hpp" />
     <ClInclude Include="VE_Pipeline.hpp" />
+    <ClInclude Include="VE_Swap_Chain.hpp" />
     <ClInclude Include="VE_Window.hpp" />
   </ItemGroup>
   <ItemGroup>
