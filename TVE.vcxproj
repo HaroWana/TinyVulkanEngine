@@ -22,6 +22,7 @@
     <ClCompile Include="first_app.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VE_Device.cpp" />
+    <ClCompile Include="VE_Model.cpp" />
     <ClCompile Include="VE_Pipeline.cpp" />
     <ClCompile Include="VE_Swap_Chain.cpp" />
     <ClCompile Include="VE_Window.cpp" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <ClInclude Include="first_app.hpp" />
     <ClInclude Include="VE_Device.hpp" />
+    <ClInclude Include="VE_Model.hpp" />
     <ClInclude Include="VE_Pipeline.hpp" />
     <ClInclude Include="VE_Swap_Chain.hpp" />
     <ClInclude Include="VE_Window.hpp" />
@@ -93,6 +95,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\harow\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>

@@ -36,6 +36,9 @@
     <ClCompile Include="VE_Swap_Chain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VE_Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first_app.hpp">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VE_Swap_Chain.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VE_Model.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
