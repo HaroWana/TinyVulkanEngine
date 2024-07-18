@@ -30,13 +30,16 @@ namespace ve {
         void    createPipelineLayout();
         void    createPipeline();
         void    createCommandBuffers();
+        void    freeCommandBuffers();
         void    drawFrame();
+        void    recreateSwapChain();
+        void    recordCommandBuffer(int imageIndex);
 
-        void    sierpinski(std::vector<VEModel::Vertex>& vertices, int depth, glm::vec2 left, glm::vec2 right, glm::vec2 top);
+        void    sierpinski(std::vector<VEModel::Vertex>& vertices, int depth, VEModel::Vertex left, VEModel::Vertex right, VEModel::Vertex top);
 
         VEWindow    veWindow{WIDTH, HEIGHT, "Hello Vulkan"};
         VEDevice    veDevice{veWindow};
-        VESwapChain veSwapChain{veDevice, veWindow.getExtent()};
+        std::unique_ptr<VESwapChain> veSwapChain;
         std::unique_ptr<VEPipeline> vePipeline;
         VkPipelineLayout            pipelineLayout;
         std::vector<VkCommandBuffer>    commandBuffers;

@@ -8,6 +8,7 @@
 // std lib headers
 #include <string>
 #include <vector>
+#include <memory>
 
 namespace ve {
 
@@ -16,10 +17,11 @@ public:
     static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
     VESwapChain(VEDevice &deviceRef, VkExtent2D windowExtent);
+    VESwapChain(VEDevice& deviceRef, VkExtent2D windowExtent, std::shared_ptr<VESwapChain> previous);
     ~VESwapChain();
 
     VESwapChain(const VESwapChain &) = delete;
-    void operator=(const VESwapChain &) = delete;
+    VESwapChain &operator=(const VESwapChain &) = delete;
 
     VkFramebuffer   getFrameBuffer(int index)   { return swapChainFramebuffers[index]; }
     VkRenderPass    getRenderPass()             { return renderPass; }
@@ -38,7 +40,8 @@ public:
     VkResult    acquireNextImage(uint32_t *imageIndex);
     VkResult    submitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
 
-    private:
+private:
+    void init();
     void createSwapChain();
     void createImageViews();
     void createDepthResources();
@@ -67,6 +70,7 @@ public:
     VkExtent2D  windowExtent;
 
     VkSwapchainKHR swapChain;
+    std::shared_ptr<VESwapChain> oldSwapchain;
 
     std::vector<VkSemaphore> imageAvailableSemaphores;
     std::vector<VkSemaphore> renderFinishedSemaphores;

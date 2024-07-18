@@ -14,6 +14,20 @@ namespace ve {
 VESwapChain::VESwapChain(VEDevice &deviceRef, VkExtent2D extent)
     : device{deviceRef}, windowExtent{extent}
 {
+    init();
+}
+
+VESwapChain::VESwapChain(VEDevice& deviceRef, VkExtent2D extent, std::shared_ptr<VESwapChain> previous)
+    : device{ deviceRef }, windowExtent{ extent }, oldSwapchain{ previous }
+{
+    init();
+
+    //clean up old swap chain after it's no longer needed
+    oldSwapchain = nullptr;
+}
+
+void    VESwapChain::init()
+{
     createSwapChain();
     createImageViews();
     createRenderPass();
@@ -171,7 +185,7 @@ void VESwapChain::createSwapChain()
     createInfo.presentMode = presentMode;
     createInfo.clipped = VK_TRUE;
 
-    createInfo.oldSwapchain = VK_NULL_HANDLE;
+    createInfo.oldSwapchain = oldSwapchain == nullptr ? VK_NULL_HANDLE : oldSwapchain->swapChain;
 
     if (vkCreateSwapchainKHR(device.device(), &createInfo, nullptr, &swapChain) != VK_SUCCESS)
         throw std::runtime_error("failed to create swap chain!");
@@ -376,7 +390,7 @@ VkSurfaceFormatKHR VESwapChain::chooseSwapSurfaceFormat(
 {
     for (const auto &availableFormat : availableFormats)
     {
-        if (availableFormat.format == VK_FORMAT_B8G8R8A8_UNORM &&
+        if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB &&
             availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR)
             return availableFormat;
     }
