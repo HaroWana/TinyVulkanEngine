@@ -10,7 +10,8 @@ linux:ubuntu:jammy:
         pkg_format: deb
     before_script:
         -   DEBIAN_FRONTEND=noninteractive apt update -yqq
-        -   DEBIAN_FRONTEND=noninteractive wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc/apt/trusted.gpg.d/lunarg.asc
+        -   DEBIAN_FRONTEND=noninteractive apt install build-essential wget
+        -   DEBIAN_FRONTEND=noninteractive wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | tee /etc/apt/trusted.gpg.d/lunarg.asc
         -   DEBIAN_FRONTEND=noninteractive wget -qO /etc/apt/sources.list.d/lunarg-vulkan-jammy.list https://packages.lunarg.com/vulkan/lunarg-vulkan-jammy.list
         -   DEBIAN_FRONTEND=noninteractive apt update -yqq
         -   DEBIAN_FRONTEND=noninteractive apt install vulkan-sdk
