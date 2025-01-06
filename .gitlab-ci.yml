@@ -2,7 +2,7 @@
 
 linux:ubuntu:jammy:
     stage: build
-    tags: [docker, vulkan]
+#    tags: [docker, vulkan]
     image: ubuntu:jammy
     variables:
         GIT_SUBMODULE_STRATEGY: recursive
