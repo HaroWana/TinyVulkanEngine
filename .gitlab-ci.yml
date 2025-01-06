@@ -14,7 +14,7 @@ linux:ubuntu:jammy:
         -   DEBIAN_FRONTEND=noninteractive wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | tee /etc/apt/trusted.gpg.d/lunarg.asc
         -   DEBIAN_FRONTEND=noninteractive wget -qO /etc/apt/sources.list.d/lunarg-vulkan-jammy.list https://packages.lunarg.com/vulkan/lunarg-vulkan-jammy.list
         -   DEBIAN_FRONTEND=noninteractive apt update -yqq
-        -   DEBIAN_FRONTEND=noninteractive apt install vulkan-sdk
+        -   DEBIAN_FRONTEND=noninteractive apt install -yqq vulkan-sdk
         -   DEBIAN_FRONTEND=noninteractive mkdir -v logs/
     script:
         -   make | tee logs/make.log.txt
