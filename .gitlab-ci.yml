@@ -20,3 +20,5 @@ linux:ubuntu:jammy:
     rules:
         -   if: $CI_COMMIT_TAG
             when: on_success
+        -   if: $CI_COMMIT_BRANCH
+            when: on_success
