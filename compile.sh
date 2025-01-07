@@ -1,2 +1,2 @@
-/media/jlorber/0ECF-2310/VulkanSDK/1.3.283.0/x86_64/bin/glslc shaders/simple_shader.vert -o shaders/simple_shader.vert.spv
-/media/jlorber/0ECF-2310/VulkanSDK/1.3.283.0/x86_64/bin/glslc shaders/simple_shader.frag -o shaders/simple_shader.frag.spv
+/usr/bin/glslc shaders/simple_shader.vert -o shaders/simple_shader.vert.spv
+/usr/bin/glslc shaders/simple_shader.frag -o shaders/simple_shader.frag.spv
