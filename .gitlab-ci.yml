@@ -23,7 +23,7 @@ linux:ubuntu:jammy:
     after_script:
         -   DEBIAN_FRONTEND=noninteractive chmod +x compile.sh && ./compile.sh || echo 'Failed to compile shaders!'
         -   find -type f -name "VulkanTest*" -exec cp {} TVE/ -vf \;
-        -   find shaders/ -type d -name "*.spv" -exec cp {} TVE/shaders -rvf \;
+        -   find shaders/ -type f -name "*.spv" -exec cp {} TVE/shaders -vf \;
         -   cp logs/ TVE/ -rvf
         -   DEBIAN_FRONTEND=noninteractive find / -type f -name "glslc"
     rules:
