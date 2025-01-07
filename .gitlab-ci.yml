@@ -20,7 +20,7 @@ linux:ubuntu:jammy:
         -   test ! -d TVE/ && mkdir -v TVE/ || echo 'TVE folder already exists.'
         -   make | tee logs/make.log.txt
     after_script:
-        -   find -type f -name "VulkanTest*" -exec cp {} TVE/ -vf
+        -   find -type f -name "VulkanTest*" -exec cp {} TVE/ -vf \;
     rules:
         -   if: $CI_COMMIT_TAG
             when: on_success
