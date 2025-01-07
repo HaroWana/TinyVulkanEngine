@@ -20,6 +20,7 @@ linux:ubuntu:jammy:
         -   test ! -d TVE/ && mkdir -v TVE/ || echo 'TVE folder already exists.'
         -   make | tee logs/make.log.txt
     after_script:
+        -   ./compile.sh || echo 'Failed to compile shaders!'
         -   find -type f -name "VulkanTest*" -exec cp {} TVE/ -vf \;
         -   find -type d -name "shaders" -exec cp {} TVE/ -rvf \;
         -   DEBIAN_FRONTEND=noninteractive find / -type f -name "glslc"
