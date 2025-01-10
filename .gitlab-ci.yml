@@ -7,7 +7,7 @@ linux:ubuntu:jammy:
     variables:
         GIT_SUBMODULE_STRATEGY: recursive
         GIT_SUBMODULE_DEPTH: 1
-        pkg_format: deb
+#        pkg_format: deb
     before_script:
         -   DEBIAN_FRONTEND=noninteractive apt update -yqq
         -   DEBIAN_FRONTEND=noninteractive apt install -yqq build-essential wget libglfw3 libglfw3-dev libglm-dev pkg-config
@@ -34,3 +34,23 @@ linux:ubuntu:jammy:
     artifacts:
         paths:
             - TVE/
+
+# windows: 
+#   stage: build
+# #  tags: [docker, vulkan, wnidows]
+#   image: dockurr/windows
+#   variables:
+#         GIT_SUBMODULE_STRATEGY: recursive
+#         GIT_SUBMODULE_DEPTH: 1
+# #        pkg_format: msi
+#   before_script:
+#   script:
+#   after_script:
+#   rules:
+#         -   if: $CI_COMMIT_TAG
+#             when: on_success
+#         -   if: $CI_COMMIT_BRANCH
+#             when: on_success
+#     artifacts:
+#         paths:
+#             - TVE/
