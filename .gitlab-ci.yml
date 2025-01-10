@@ -18,10 +18,11 @@ linux:ubuntu:jammy:
         -   DEBIAN_FRONTEND=noninteractive mkdir -v logs/
     script:
         -   test ! -d TVE/ && mkdir -v TVE/ || echo 'TVE folder already exists.'
-        -   test ! -d TVE/shaders && mkdir -v TVE/shaders/ || echo 'Shaders folder alerady exists.'
-        -   make | tee logs/make.log.txt
+        -   test ! -d TVE/shaders && mkdir -v TVE/shaders/ || echo 'Shaders folder already exists.'
+        -   echo 'Building...' && make | tee logs/make.log.txt
     after_script:
-        -   DEBIAN_FRONTEND=noninteractive chmod +x compile.sh && ./compile.sh || echo 'Failed to compile shaders!'
+        -   DEBIAN_FRONTEND=noninteractive chmod +x compile.sh && echo 'Compiling shaders...' && ./compile.sh || echo 'Failed to compile shaders!'
+        -   echo 'Shaders compiled.'
         -   find -type f -name "VulkanTest*" -exec cp {} TVE/ -vf \;
         -   find shaders/ -type f -name "*.spv" -exec cp {} TVE/shaders -vf \;
         -   cp logs/ TVE/ -rvf
