@@ -1,5 +1,5 @@
-#ifndef VULKAN_TUT_VE_PIPELINE_HPP
-#define VULKAN_TUT_VE_PIPELINE_HPP
+#ifndef VE_PIPELINE_HPP
+# define VE_PIPELINE_HPP
 
 #include "VE_Device.hpp"
 
@@ -61,4 +61,4 @@ namespace ve {
     };
 }
 
-#endif //VULKAN_TUT_VE_PIPELINE_HPP
+#endif // VE_PIPELINE_HPP

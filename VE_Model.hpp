@@ -45,4 +45,4 @@ namespace ve
 	};
 }
 
-#endif
+#endif // VE_MODEL_HPP

@@ -1,5 +1,5 @@
 #ifndef VULKAN_TUT_VE_WINDOW_HPP
-#define VULKAN_TUT_VE_WINDOW_HPP
+# define VULKAN_TUT_VE_WINDOW_HPP
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
@@ -38,4 +38,4 @@ namespace ve {
 
 }
 
-#endif //VULKAN_TUT_VE_WINDOW_HPP
+#endif // VE_WINDOW_HPP

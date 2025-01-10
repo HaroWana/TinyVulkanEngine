@@ -1,5 +1,5 @@
-#ifndef VULKAN_TUT_VE_DEVICE_HPP
-#define VULKAN_TUT_VE_DEVICE_HPP
+#ifndef VE_DEVICE_HPP
+# define VE_DEVICE_HPP
 
 #include "VE_Window.hpp"
 
@@ -111,4 +111,4 @@ private:
 
 }  // namespace ve
 
-#endif
+#endif // VE_DEVICE_HPP

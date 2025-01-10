@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VE_SWAP_CHAIN_HPP
+# define VE_SWAP_CHAIN_HPP
 
 #include "VE_Device.hpp"
 
@@ -80,3 +81,5 @@ private:
 };
 
 }  // namespace ve
+
+#endif // VE_SWAP_CHAIN_HPP
