@@ -32,7 +32,7 @@ namespace ve {
     {
         std::vector<VEModel::Vertex> vertices{};
     
-        sierpinski(vertices, 5, 
+        sierpinski(vertices, 20, 
             { { -0.5f, 0.5f }, {1.0f, 0.0, 0.0} },
             { { 0.5f, 0.5f }, {0.0f, 1.0f, 0.0f} },
             { { 0.0f, -0.5f }, {0.0f, 0.0f, 1.0f} });

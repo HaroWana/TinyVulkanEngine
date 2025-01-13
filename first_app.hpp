@@ -1,5 +1,5 @@
-#ifndef VULKAN_TUT_FIRST_APP_HPP
-#define VULKAN_TUT_FIRST_APP_HPP
+#ifndef FIRST_APP_HPP
+#define FIRST_APP_HPP
 
 #include "VE_Window.hpp"
 #include "VE_Pipeline.hpp"
@@ -47,4 +47,4 @@ namespace ve {
     };
 } // namespace ve
 
-#endif //VULKAN_TUT_FIRST_APP_HPP
+#endif // FIRST_APP_HPP

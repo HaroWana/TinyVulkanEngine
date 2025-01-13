@@ -1,5 +1,5 @@
-#ifndef VULKAN_TUT_VE_WINDOW_HPP
-# define VULKAN_TUT_VE_WINDOW_HPP
+#ifndef VE_WINDOW_HPP
+# define VE_WINDOW_HPP
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
