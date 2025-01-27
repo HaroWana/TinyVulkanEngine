@@ -5,7 +5,7 @@
 --------------------
 
 This is a basic, tiny, and highly experimental Vulkan engine. It is very far from ready for production use and lacks many features.
-For now, I am following the tutorial "Vulkan (c++) Game Engine Tutorials" by Brendan Galea (github.com/blurrypiano). The plan is to greatly expand the features and optimizations after completion of the tutorial.
+For now, I am following the tutorial "Vulkan (c++) Game Engine Tutorials" (https://youtube.com/playlist?list=PL8327DO66nu9qYVKLDmdLW_84-yE4auCR&si=BZjHL9cO4nFmlMtG) by Brendan Galea (https://github.com/blurrypiano). The plan is to greatly expand the features and optimizations after completion of the tutorial.
 I don't have much time to dedicate to this project as of now, so this might take a little while.
 
 **Features**
