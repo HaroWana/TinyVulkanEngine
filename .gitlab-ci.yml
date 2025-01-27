@@ -41,13 +41,8 @@ linux:ubuntu:jammy:
 
 mirror_gh:
   stage: mirror
-  before_script:
-    - echo $GITLAB_USER_NAME 
-    - echo $GITLAB_USER_EMAIL
-    - git config --global user.name "HaroWana"
-    - git config --global user.email "johann.lorber@gmail.com"
   script:
-    - git remote add github https://github.com/HaroWana/TinyVulkanEngine.git
+    - git remote add github https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/HaroWana/TinyVulkanEngine.git
     - git push github --mirror
   only:
     - master
