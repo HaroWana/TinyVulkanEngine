@@ -41,7 +41,7 @@ linux:ubuntu:jammy:
 
 mirror_gh:
   stage: mirror
-  before_script:*
+  before_script:
     - echo $GITLAB_USER_NAME 
     - echo $GITLAB_USER_EMAIL
     - git config --global user.name "${GITLAB_USER_NAME}"
