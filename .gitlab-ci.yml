@@ -1,5 +1,9 @@
 ---
 
+stages:
+  - build
+  - mirror
+
 linux:ubuntu:jammy:
     stage: build
 #    tags: [docker, vulkan]
@@ -34,6 +38,14 @@ linux:ubuntu:jammy:
     artifacts:
         paths:
             - TVE/
+
+mirror_gh:
+  stage: mirror
+  script:
+    - git remote add github https://github.com/HaroWana/TinyVulkanEngine.git
+    - git push github --mirror
+  only:
+    - master
 
 # windows: 
 #   stage: build
