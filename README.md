@@ -50,6 +50,7 @@ Run the engine using the following command:
 * Add support for more complex models
 * Implement lighting and shading
 * Add support for physics and animation
+* Add realtime scene editing tools
 
 **License**
 ------------
